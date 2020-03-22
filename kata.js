@@ -39,3 +39,22 @@ function alphabetPosition(text) {
     .join(" ");
 }
 alphabetPosition("kk kjkj mka kkakmagh");
+
+//// Second solution
+function alphabetPosition(text) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let alphaNum = [];
+
+  text = text.toLowerCase();
+  for (let i = 0; i < text.length; i++) {
+    let indx = alphabet.indexOf(text[i]);
+    if (indx === -1) {
+      continue;
+    } else {
+      alphaNum.push(indx + 1);
+    }
+  }
+
+  return alphaNum.join(" ");
+}
+alphabetPosition("kk kjkj mka kkakmagh");
