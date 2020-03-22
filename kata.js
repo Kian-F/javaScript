@@ -58,3 +58,40 @@ function alphabetPosition(text) {
   return alphaNum.join(" ");
 }
 alphabetPosition("kk kjkj mka kkakmagh");
+
+
+
+///////////////////////////////////////////////////////////
+
+// Calculate average
+
+
+function find_average(array) {
+    var total = 0;
+    var avg=0;
+    for(var i=0; i< array.length; i++){
+      var len = array.length
+      console.log(len)
+      total += array[i];
+      console.log(total)
+    
+    }
+    
+    return avg = total/len
+  }
+
+  ///Second solution
+
+  function find_average(array) {
+
+    let sum = array.reduce(function(acc, cur){
+        acc + cur
+    },0)
+     const avg = sum/array.length
+     return avg
+    
+  }
+
+
+
+  /////////////////////////////////////////////////
