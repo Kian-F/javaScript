@@ -95,3 +95,40 @@ function find_average(array) {
 
 
   /////////////////////////////////////////////////
+//   Task
+// You need to return a string that looks like a diamond shape when printed on the screen, using asterisk (*) characters. Trailing spaces should be removed, and every line must be terminated with a newline character (\n).
+
+// Return null/nil/None/... if the input is an even number or negative, as it is not possible to print a diamond of even or negative size.
+
+function diamond(n){
+    debugger
+    if (n%2 === 0 || n < 0) return null
+    let diamCountArr = [];
+    diamCountArr.push(n)
+    
+    for (var i = n-2; i >= 1; i = i - 2) {
+      diamCountArr.unshift(i)
+      
+      diamCountArr.push(i)
+      
+    }
+    for (var i = 0; i < diamCountArr.length; i++) {
+      let currentIndexVal = diamCountArr[i]
+      
+      diamCountArr[i] = ""
+      for (var j = 0; j < currentIndexVal; j++) {
+       
+        diamCountArr[i] += "*"
+    
+      }
+    }
+    for (var k = 0; k < diamCountArr.length; k++) {
+        if (diamCountArr[k].length !== n) {
+          let spaces = (n - diamCountArr[k].length)/2
+          for (var i = 1; i <= spaces; i++) {
+            diamCountArr[k] = " " + diamCountArr[k]
+          }
+        }
+      }
+    return diamCountArr.join('\n')+'\n'
+  }
