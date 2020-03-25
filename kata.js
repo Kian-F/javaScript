@@ -165,3 +165,14 @@ function SeriesSum(n)
 return sum.toFixed(2) 
 }
 SeriesSum(10)
+
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+// Examples
+// "This is an example!" ==> "sihT si na !elpmaxe"
+// "double  spaces"      ==> "elbuod  secaps"
+
+
+function reverseWords(str) {
+    return str.split('').reverse().join('').split(' ').reverse().join(' ');
+ }
