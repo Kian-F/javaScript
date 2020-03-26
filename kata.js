@@ -176,3 +176,21 @@ SeriesSum(10)
 function reverseWords(str) {
     return str.split('').reverse().join('').split(' ').reverse().join(' ');
  }
+
+ function reverseWords(str) {
+    return str.split(' ').map(function(word){
+      return word.split('').reverse().join('');
+    }).join(' ');
+  }
+
+//The main idea is to count all the occurring characters(UTF-8) in string. If you have string like this aba then the result should be { 'a': 2, 'b': 1 }
+// What if the string is empty ? Then the result should be empty object literal { }
+
+function count (string) {  
+    return string.split('').reduce((acc, ch)=>{
+      acc[ch] = (acc[ch] || 0) + 1
+      return acc;
+    },{})
+   }
+
+   
