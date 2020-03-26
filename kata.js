@@ -193,4 +193,14 @@ function count (string) {
     },{})
    }
 
-   
+
+   function count(string){
+    return string.split('').reduce((string, char) => {
+        if(char in string ){
+            string[char]++ 
+        }else{
+          string[char] = 1
+        }
+        return string
+    }, {})
+}
