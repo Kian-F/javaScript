@@ -204,3 +204,55 @@ function count (string) {
         return string
     }, {})
 }
+
+
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+// Note: The function accepts an integer and returns an integer
+
+function squareDigits(num){
+    return Number(num.toString().solit('').map(n => n*n).join(''))
+}
+
+// In DNA strings, symbols "A" and "T" are complements of each other, 
+// as "C" and "G". You have function with one side of the DNA 
+// (string, except for Haskell); you need to get the other complementary side. 
+// DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+// DNAStrand ("ATTGC") // return "TAACG"
+function DNAStrand(dna){
+
+    var newDna =[]
+    for(let i =0; i<dna.length; i++){
+      const dnaS = dna[i];
+      switch(dnaS){
+        case 'A':
+        newDna.push('T') 
+        break;
+         case 'T':
+        newDna.push('A') 
+        break;
+         case 'C':
+        newDna.push('G') 
+        break;
+         case 'G':
+        newDna.push('C') 
+        break;
+      }
+    }return newDna.join('')}
+
+
+    
+    function DNAStrand(dna){
+        var complement = '';
+        var obj = {
+          A: "T",
+          T: "A",
+          C: "G",
+          G: "C"
+        }
+        for(var i=0; i<dna.length; i++){
+         
+        complement += obj[dna[i]];
+        
+        } return complement;
+      }
+        
