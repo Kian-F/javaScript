@@ -269,12 +269,6 @@ function DNAStrand(dna){
         let newArr = [];
          let number=  n.toString().split('')
          for(let i=0; i<number.length; i++){
-            //console.log("i: "+ number[i])
-          //newArr.push(Math.pow(number[i], p))
-          for(let j=p; j<=number.length;j++){
-            //console.log("j: "+ j)
-            
-          }
           newArr.push(Math.pow(number[i], p++))
          }
        // return number.map(n => Math.pow(n, p))
@@ -282,4 +276,15 @@ function DNAStrand(dna){
            
            const total = newArr.reduce((m, x) => m+ x)
            //console.log(total)
-       return (total % n) ? -1 : total/n 
+       return (total % n) ? -1 : total/n }
+
+       function digPow(n, p) {
+        var x = String(n).split("").reduce((s, d, i) => s + Math.pow(d, p + i), 0)
+        return x % n ? -1 : x / n
+      }
+      function digPow(n, p){
+        var ans = (''+n).split('')
+          .map(function(d,i){return Math.pow(+d,i+p) })
+          .reduce(function(s,v){return s+v}) / n
+        return ans%1 ? -1 : ans    
+      }
