@@ -240,7 +240,7 @@ function DNAStrand(dna){
     }return newDna.join('')}
 
 
-    
+
     function DNAStrand(dna){
         var complement = '';
         var obj = {
@@ -256,3 +256,30 @@ function DNAStrand(dna){
         } return complement;
       }
         
+    //   Given a positive integer n written as abcd... (a, b, c, d... being digits) and a positive integer p
+
+    //   we want to find a positive integer k, if it exists, such as the sum of the digits of n taken to the successive powers of p is equal to k * n.
+    //   In other words:
+      
+    //   Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k
+
+
+      function digPow(n, p){
+  
+        let newArr = [];
+         let number=  n.toString().split('')
+         for(let i=0; i<number.length; i++){
+            //console.log("i: "+ number[i])
+          //newArr.push(Math.pow(number[i], p))
+          for(let j=p; j<=number.length;j++){
+            //console.log("j: "+ j)
+            
+          }
+          newArr.push(Math.pow(number[i], p++))
+         }
+       // return number.map(n => Math.pow(n, p))
+       
+           
+           const total = newArr.reduce((m, x) => m+ x)
+           //console.log(total)
+       return (total % n) ? -1 : total/n 
