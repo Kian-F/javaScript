@@ -370,3 +370,32 @@ function tickets(peopleInLine){
   }
   return 'YES';
 }
+
+// Sum of Pairs
+// Given a list of integers and a single sum value, 
+// return the first two values (parse from the left please) 
+// in order of appearance that add up to form the sum.
+
+// sum_pairs([11, 3, 7, 5],         10)
+// #              ^--^      3 + 7 = 10
+// == [3, 7]
+
+
+
+var sum_pairs=function(ints, s){
+  let indices = {}
+   for(let i=0; i<ints.length; i++){
+    if(indices[s-ints[i]])
+    return [s-ints[i], ints[i]];
+    indices[ints[i]]=true
+    }
+    }
+
+    let sum_pairs= (a, s) => {
+      let mem = {};
+      for(x of a) 
+        if(mem[s - x])
+          return [s - x, x];
+        else 
+          mem[x] = 1;
+    }
