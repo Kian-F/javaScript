@@ -25,12 +25,18 @@ $(document).ready(function(){
    $wordDiv.css({
        top: xRand,
        left: yRand,
-       color:ColorRand
+       color:ColorRand,
+       fontSize: `${15 + randomValue(50)}pt`,
+       transform: `rotate(${randomValue(360)})deg`
+
         
     
    })
 
 $('body').append($wordDiv);
+$wordDiv.fadeIn(2000).fadeOut(2000, function(){
+  $(this).remove();
+})
 }
 //setInterval( displayWord, 100 );
 })
