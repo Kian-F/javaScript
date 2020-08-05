@@ -89,3 +89,14 @@ var numJewelsInStones = function(J, S) {
     
     return count
 };
+
+//Second solution
+let numJewelsInStones = function(J, S) {
+    let count=0;
+    for(let x of S){
+        if(J.includes(x)){
+            count++;
+        }
+    }
+    return count;
+};
