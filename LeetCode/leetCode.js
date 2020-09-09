@@ -456,3 +456,64 @@ var containsDuplicate = function(nums) {
    return false
    
 };
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+/*The goal of this exercise is to manipulate arrays by creating a function that can reverse an array and by creating a function that can flatten an array. Do not use any libraries to complete this task - write this stuff from scratch using standard JS methods and objects.
+
+Make two functions
+reverse
+flatten
+reverse( [1, 2, 3, 4] );
+// => [ 4, 3, 2, 1 ]
+flatten( ["Hello", ["World", 42] ] );
+// => [ "Hello", "World", 42 ]
+You only need to make flatten work to one level deep! You should be able to flatten this - ["Hello", ["World"]] - but not this - ["Hello", [[["World"]]]]*/
+
+const reverse = function( arr ){
+  let output = [];
+
+  // looping forwards
+  // for (let i = 0; i < arr.length; i++) {
+  //   const currentElem = arr[i];
+  //   output.unshift(currentElem);
+  // }
+
+  for (let i = arr.length-1; i >= 0; i--) {
+    const currentElem = arr[i];
+    output.push(currentElem);
+    console.log(output);
+  }
+
+  console.log(output)
+  return output
+};
+
+reverse([1, 2, 3, 4]);
+
+
+const flatten = function( arr ){
+  let output = [];
+
+  for (var i = 0; i < arr.length; i++) {
+    const currentElem = arr[i];
+
+    if(Array.isArray(currentElem)){
+
+      // for (let j = 0; j < currentElem.length; j++) {
+      //   const innerElem = currentElem[j];
+      //   output.push( innerElem );
+      // }
+
+      output = output.concat(currentElem);
+
+    } else {
+      output.push( currentElem );
+    }
+  }
+
+
+  console.log(output);
+  return output;
+};
+
+flatten(["Hello", ["World", 42] ]);
