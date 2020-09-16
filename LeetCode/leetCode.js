@@ -635,3 +635,16 @@ const sieve = {
     return this.primes;
   }
 };
+
+///////////////////////////////////////////
+const sieve2 = function(limit) {
+  let nums = [...Array(limit + 1 ).keys()].slice(2);
+  let primes = [];
+
+  while (nums.length) {
+    let n = nums.shift(); //take out first element
+    primes.push(n) //push to list of primes
+    nums = nums.filter(m => m % n); //remove multiples from remaining nums
+  }
+  return primes;
+};
