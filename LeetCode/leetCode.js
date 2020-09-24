@@ -751,3 +751,35 @@ start = null;
 start = tmp;
 
 return start;
+
+////////////////////////////////////////////////////////////////////////////////
+// Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, return -1.
+
+// Examples:
+
+// s = "leetcode"
+// return 0.
+
+// s = "loveleetcode"
+// return 2.
+ 
+
+// Note: You may assume the string contains only lowercase English letters.
+
+var firstUniqChar = function(s) {
+  let map = new Map();
+  for (let char of s) {
+    if (!map.has(char)) {
+      map.set(char, 1);
+    } else {
+      map.set(char, map.get(char) + 1);
+    }
+  }
+  for (let char of s) {
+    if (map.get(char) === 1) {
+      return s.indexOf(char)
+    } 
+  }
+  return -1;  
+};
+
