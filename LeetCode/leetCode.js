@@ -1133,6 +1133,30 @@ Constraints:
 
 1 <= n <= 231 - 1*/
 
+/*getDigits(num):
+The gist here is that if we have, for example, the number 219, we can split it mathematically using % and /, like so:
+
+Math.floor(219 / 10) --> 21
+219 % 10 --> 9
+Specifically:
+
+Use num % 10 to extract number in the ones position and push it to the digits array
+Overwrite num with Math.floor(num /10) to give us the rest of the number
+Return digits
+getSquaredTotal(numbers):
+We can take advantage of the reduce() array method here to iterate over numbers and additively square each digit.
+
+isHappy(n):
+After defining the previous two helper functions, isHappy()'s main job is to do two things:
+
+Return true if n becomes equal to 1
+Return false if we're in a loop, AKA, if we see the same number twice
+#2 works because we know that getSquaredTotal() will produce the same result each time it receives a given input (this is known as a Pure Function), so we know we're stuck in a loop if we see a result from this function twice.
+
+There are a number of ways to track duplicates, and here we use Javascript's Set() object to take advantage of Set.has(). As soon as seen.has() returns true, we can return false.
+
+Otherwise, we'll eventually return true when n === 1.*/
+
 var getDigits = (num) => {
   const digits = [];
   while (num > 0) {
